@@ -13,25 +13,39 @@
       --black: #000000;
       --peach: #fbe8d3;
     }
-
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
       background-color: #fffdf8;
       color: var(--dark-brown);
+      margin: 0;
+      padding: 0;
       scroll-behavior: smooth;
     }
-
     header {
       background-color: var(--light-brown);
       padding: 20px 40px;
+      border-bottom: 5px solid var(--dark-brown);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 4px solid var(--dark-brown);
     }
-
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      padding: 0;
+      margin: 0;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: var(--black);
+      font-weight: bold;
+    }
+    .logo-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
     .logo-circle {
       width: 60px;
       height: 60px;
@@ -40,208 +54,95 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: bold;
       font-size: 1.2rem;
+      font-weight: bold;
       color: var(--dark-brown);
-      animation: floatDots 3s infinite ease-in-out;
       position: relative;
     }
-
-    .logo-circle span {
-      position: relative;
-      z-index: 1;
-    }
-
     .logo-name {
       font-size: 0.6rem;
       color: var(--black);
-      text-align: center;
-      margin-top: 2px;
     }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 30px;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: var(--black);
-      font-weight: bold;
-    }
-
     .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       background: linear-gradient(to right, #2a1c13, #3e2a1d);
       color: #fbe8d3;
-      text-align: center;
-      padding: 100px 20px;
+      padding: 100px 40px;
+      flex-wrap: wrap;
     }
-
+    .hero-text {
+      max-width: 600px;
+      z-index: 2;
+    }
     .hero h1 {
-      font-size: 2.8rem;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
     }
-
     .hero p {
-      font-size: 1.2rem;
-      margin-top: 10px;
+      font-size: 1.1rem;
+      line-height: 1.6;
     }
-
+    .cta {
+      margin-top: 30px;
+    }
     .cta a {
       background-color: var(--light-brown);
-      color: var(--black);
-      padding: 12px 24px;
+      padding: 12px 30px;
       border-radius: 30px;
+      color: var(--black);
       font-weight: bold;
       text-decoration: none;
-      margin-top: 30px;
-      display: inline-block;
+      transition: 0.3s;
     }
-
-    section {
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    .skills-grid, .projects-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      margin-top: 30px;
-    }
-
-    .skills-grid div, .projects-grid div {
-      background-color: #fff;
-      border: 1px solid var(--light-brown);
-      border-radius: 8px;
-      padding: 20px;
-      width: 280px;
-    }
-
-    .projects-grid img {
-      width: 100%;
-      border-radius: 8px;
-    }
-
-    form input, form textarea {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 20px;
-      border: 1px solid var(--light-brown);
-      border-radius: 6px;
-    }
-
-    form button {
+    .cta a:hover {
       background-color: var(--dark-brown);
       color: white;
-      padding: 12px 30px;
-      border: none;
-      border-radius: 6px;
-      font-weight: bold;
-      cursor: pointer;
     }
-
-    footer {
-      background-color: var(--light-brown);
-      text-align: center;
-      padding: 30px 20px;
+    .hero-image {
+      max-width: 350px;
+      width: 100%;
     }
-
-    @keyframes floatDots {
-      0% { transform: scale(1) translateY(0); opacity: 0.6; }
-      50% { transform: scale(1.05) translateY(-2px); opacity: 1; }
-      100% { transform: scale(1) translateY(0); opacity: 0.6; }
+    .hero-image img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
     }
   </style>
 </head>
 <body>
-
   <header>
-    <div>
-      <div class="logo-circle"><span>N³</span></div>
+    <div class="logo-container">
+      <div class="logo-circle">N³</div>
       <div class="logo-name">Nancy Ndanu Nduati</div>
     </div>
     <nav>
       <ul>
         <li><a href="#hero">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <section class="hero" id="hero">
-    <h1>Hello, I’m Nancy Ndanu</h1>
-    <p>An Information Scientist & Web Developer</p>
-    <div class="cta"><a href="#projects">View My Work</a></div>
-  </section>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I’m Nancy Ndanu Nduati, an Information Scientist specializing in IT. I recently completed my studies at Rongo University and will graduate in December. I love solving IT-related challenges and helping businesses thrive online.</p>
-    <div class="skills-grid">
-      <div>Responsive Web Design</div>
-      <div>Database Management</div>
-      <div>WordPress Development</div>
-      <div>Records & Archive Management</div>
-      <div>Creative IT Solutions</div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-      <div>
-        <img src="https://via.placeholder.com/300x180.png?text=Digital+Archive" alt="Digital Archive">
-        <h3>Digital Archive System</h3>
-        <p>Helps institutions store and retrieve documents efficiently.</p>
-        <a href="https://nancyndanu.github.io/Digital-archive" target="_blank">View Project →</a>
-      </div>
-      <div>
-        <img src="https://via.placeholder.com/300x180.png?text=Portfolio" alt="Portfolio">
-        <h3>Portfolio Website</h3>
-        <p>This site is a showcase of my personal and professional brand.</p>
-        <a href="https://nancyndanu.github.io/nancy-ndanu-portfolio" target="_blank">View Project →</a>
+    <div class="hero-text" data-aos="fade-right">
+      <h1>Welcome to My Space 👋</h1>
+      <p>Hi, I’m <strong>Nancy Ndanu Nduati</strong>, a passionate Information Scientist with a strong foundation in IT. I specialize in web design, development, database management, and digital records organization.</p>
+      <p>I bring a powerful mix of creativity and problem-solving to every project. From building clean, responsive websites to managing complex data systems, I help individuals and businesses bring their digital visions to life.</p>
+      <p>Beyond tech, I also create content and help businesses grow through digital marketing strategies that truly connect.</p>
+      <p><em>Turning digital dreams into reality.</em></p>
+      <div class="cta">
+        <a href="projects.html">View My Work</a>
       </div>
     </div>
-  </section>
-
-  <section id="services">
-    <h2>Services</h2>
-    <p>I offer services in web development, digital archiving, database design, and IT support for individuals and businesses.</p>
-    <div class="skills-grid">
-      <div>Custom Website Design</div>
-      <div>Digital Records Management</div>
-      <div>Database Systems</div>
-      <div>WordPress Sites</div>
-      <div>IT Consultancy</div>
+    <div class="hero-image" data-aos="fade-left">
+      <img src="assets/nancy-hero.jpg" alt="Nancy Ndanu Portrait">
     </div>
   </section>
-
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>Let’s collaborate! Reach out via this form or email me directly at <strong>nancyndanu06@gmail.com</strong></p>
-    <form action="https://formspree.io/f/xnnvyqao" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required/>
-      <input type="email" name="email" placeholder="Your Email" required/>
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Nancy Ndanu Nduati. All rights reserved.</p>
-    <div>
-      <a href="https://www.linkedin.com/in/nancy-ndanu" target="_blank">LinkedIn</a> |
-      <a href="https://github.com/NancyNdanu" target="_blank">GitHub</a> |
-      <a href="mailto:nancyndanu06@gmail.com">Email</a>
-    </div>
-  </footer>
 
 </body>
 </html>
